@@ -3,89 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casper Motivazionale</title>
+    <title>Frasi Motivazionali</title>
     <style>
+        /* Imposta lo stile generale della pagina */
         body {
+            margin: 0;
+            padding: 0;
             font-family: 'Arial', sans-serif;
-            background-color: #f8d7da;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
-
-        .frame {
-            border: 10px solid #333;
-            padding: 20px;
-            border-radius: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            width: 80%;
-            max-width: 600px;
-        }
-
-        .cartoon {
-            max-width: 100%;
-            animation: slide 5s infinite alternate;
-        }
-
-        @keyframes slide {
-            0% { transform: translateX(-50px); }
-            100% { transform: translateX(50px); }
-        }
-
-        .quote {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 20px;
+            background:url('https://images.app.goo.gl/GsHNCJT2WAQe4Phd8') no-repeat center center fixed;
+            background-size: cover;
             color: #333;
-            animation: fadeIn 3s ease-in-out;
         }
 
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        /* Rettangolo centrale per la frase */
+        .quote-box {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            font-size: 1.5em;
         }
     </style>
 </head>
 <body>
 
-    <div class="frame">
-        <!-- Animazione Casper in stile cartoon -->
-        <img class="cartoon" src="path_to_casper_cartoon_image.png" alt="Casper" />
-
-        <!-- Frase motivazionale -->
-        <div class="quote" id="quote"></div>
-    </div>
+    <!-- Box della frase -->
+    <div class="quote-box" id="quote-box"></div>
 
     <script>
         // Lista di frasi motivazionali
         const quotes = [
-            "Non smettere mai di credere in te stesso!",
-            "Ogni piccolo passo ti porta più vicino al tuo sogno.",
-            "Il successo inizia con il coraggio di provare.",
-            "Ogni difficoltà è una lezione in maschera.",
-            "La determinazione è la chiave per ogni obiettivo."
+            "Non smettere mai di sognare, perché i sogni si realizzano!",
+            "Ogni passo avanti è un successo in sé.",
+            "Le difficoltà sono opportunità mascherate.",
+            "Abbi il coraggio di essere straordinario!",
+            "La vita premia chi ha il coraggio di osare.",
+            "Il tuo potenziale è illimitato."
         ];
 
-        // Funzione per cambiare la frase casualmente
+        // Funzione per ottenere una frase casuale
         function getRandomQuote() {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             return quotes[randomIndex];
         }
 
-        // Inserire una frase motivazionale nel sito
-        document.getElementById('quote').innerText = getRandomQuote();
-
-        // Cambiare la frase ogni 5 secondi
-        setInterval(() => {
-            document.getElementById('quote').innerText = getRandomQuote();
-        }, 5000);
+        // Inserire una frase casuale nel box
+        document.getElementById('quote-box').innerText = getRandomQuote();
     </script>
 
 </body>
