@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frasi Casuali</title>
+</head>
+<body>
+    <h1>La tua frase casuale</h1>
+    <p id="frase"></p>
+    <button onclick="generaFrase()">Genera un'altra frase</button>
+
+    <script>
+        const frasi = [
+            "La vita è bella.",
+            "Il successo arriva a chi si impegna.",
+            "Ogni giorno è una nuova opportunità.",
+            "Sii il cambiamento che vuoi vedere nel mondo.",
+            "Non arrenderti mai."
+        ];
+
+        function generaFrase() {
+            const index = Math.floor(Math.random() * frasi.length);
+            document.getElementById("frase").innerText = frasi[index];
+        }
+
+        // Mostra una frase casuale all'apertura
+        generaFrase();
+    </script>
+</body>
+</html>
