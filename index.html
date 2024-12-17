@@ -29,22 +29,13 @@
             margin-bottom: 30px;
         }
 
- /* Immagine della GIF di Casper - dimensioni ridotte */
+        /* Immagine della GIF di Casper - dimensioni ridotte */
         .casper {
             width: 150px;  /* Dimensione più piccola della GIF */
             height: auto;
             animation: wag-tail 1s infinite alternate ease-in-out, move-body 0.5s infinite alternate ease-in-out, walk 5s infinite linear;
             position: relative;
             z-index: 1;
-        }
-
-
-
-
-        /* Immagine di Casper - senza animazione */
-        .casper {
-            width: 150px;  /* Dimensione della GIF */
-            height: auto;
         }
 
         /* Frase motivazionale */
@@ -80,6 +71,20 @@
         </div>
     </div>
 
+    <!-- Codice widget Tawk.to -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/6760b1b849e2fd8dfef91874/1if8rce9g';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!-- End of Tawk.to Script -->
+
     <script>
         // Funzione per cambiare la frase motivazionale ogni volta che si ricarica la pagina
         const quotes = [
@@ -96,18 +101,5 @@
         // Imposta la frase motivazionale nel riquadro
         document.getElementById("motivational-quote").textContent = randomQuote;
     </script>
-   <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6760b1b849e2fd8dfef91874/1if8rce9g';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script--> 
 </body>
 </html>
