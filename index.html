@@ -1,127 +1,98 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Casper Motivazionale</title>
-  <style>
-    /* Stile globale */
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: url('../images/sfondo-fantasy.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Arial', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casper - Frasi Motivazionali</title>
+    <style>
+        /* Stile globale */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('images/sfondo-fantasy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
 
-    /* Contenitore principale */
-    .container {
-      text-align: center;
-      position: relative;
-    }
+        /* Contenitore principale */
+        .container {
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
 
-    /* Casper animato */
-    .casper {
-      width: 150px;
-      height: auto;
-      animation: wag-tail 1s infinite alternate ease-in-out, move-body 0.5s infinite alternate ease-in-out;
-      margin-bottom: 20px;
-    }
+        /* Immagine animata di Casper */
+        .casper-container {
+            position: relative;
+            margin: auto;
+            display: inline-block;
+            animation: float 3s infinite ease-in-out;
+        }
 
-    /* Riquadro motivazionale */
-    .quote-box {
-      margin: 0 auto;
-      max-width: 400px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 4px solid transparent;
-      border-image: linear-gradient(to right, #6a11cb, #2575fc);
-      border-image-slice: 1;
-      border-radius: 15px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
+        .casper {
+            width: 150px;
+            height: auto;
+        }
 
-    /* Motivo geometrico decorativo */
-    .quote-box:before {
-      content: '';
-      position: absolute;
-      top: -10px;
-      left: -10px;
-      right: -10px;
-      bottom: -10px;
-      z-index: -1;
-      border: 2px dashed #6a11cb;
-      border-radius: 20px;
-    }
+        /* Riquadro per la frase motivazionale */
+        .quote-box {
+            margin: 20px auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
+            border: 3px solid #333;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            display: inline-block;
+            text-align: center;
+        }
 
-    .quote-box p {
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-      margin: 0;
-    }
-
-    /* Animazioni */
-    @keyframes wag-tail {
-      0% {
-        transform: rotate(-10deg);
-      }
-      100% {
-        transform: rotate(10deg);
-      }
-    }
-
-    @keyframes move-body {
-      0% {
-        transform: translateX(-5px);
-      }
-      100% {
-        transform: translateX(5px);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .quote-box {
-        max-width: 300px;
-        padding: 15px;
-      }
-
-      .casper {
-        width: 100px;
-      }
-    }
-  </style>
+        /* Animazioni */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(10px);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <!-- Casper animato -->
-    <img src="../images/casper.gif" alt="Casper" class="casper">
+    <div class="container">
+        <!-- Casper Animato -->
+        <div class="casper-container">
+            <img src="images/casper.gif" alt="Casper" class="casper">
+        </div>
 
-    <!-- Frase motivazionale -->
-    <div class="quote-box">
-      <p id="motivational-quote">"Ogni giorno è una nuova opportunità per brillare!"</p>
+        <!-- Riquadro con frase motivazionale -->
+        <div class="quote-box">
+            <p id="motivational-quote">"Ogni giorno è una nuova opportunità per brillare!"</p>
+        </div>
     </div>
-  </div>
 
-  <script>
-    // Frasi motivazionali
-    const quotes = [
-      "Ogni giorno è una nuova opportunità per brillare!",
-      "Non smettere mai di credere in te stesso!",
-      "Le grandi cose prendono tempo. Continua a lavorare!",
-      "Fai di ogni giorno il tuo capolavoro!",
-      "Il futuro appartiene a chi crede nella bellezza dei propri sogni!"
-    ];
+    <script>
+        // Array di frasi motivazionali
+        const quotes = [
+            "Ogni giorno è una nuova opportunità per brillare!",
+            "Non smettere mai di credere in te stesso!",
+            "Le grandi cose prendono tempo. Continua a lavorare!",
+            "Fai di ogni giorno il tuo capolavoro!",
+            "Il futuro appartiene a chi crede nella bellezza dei propri sogni!"
+        ];
 
-    // Imposta una frase motivazionale casuale
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    document.getElementById("motivational-quote").textContent = randomQuote;
-  </script>
+        // Mostra una frase motivazionale casuale
+        document.getElementById("motivational-quote").textContent = 
+            quotes[Math.floor(Math.random() * quotes.length)];
+    </script>
 </body>
 </html>
 
