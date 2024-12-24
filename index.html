@@ -15,21 +15,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
 
         /* Contenitore principale */
         .container {
             text-align: center;
             position: relative;
-            width: 100%;
+            width: 90%;
+            max-width: 800px;
+            margin: auto;
         }
 
-        /* Immagine animata di Casper */
+        /* Casper animato */
         .casper-container {
-            position: relative;
-            margin: auto;
-            display: inline-block;
+            margin-bottom: 20px;
             animation: float 3s infinite ease-in-out;
         }
 
@@ -38,21 +38,55 @@
             height: auto;
         }
 
-        /* Riquadro per la frase motivazionale */
+        /* Riquadro con motivo geometrico */
         .quote-box {
-            margin: 20px auto;
+            position: relative;
+            margin: auto;
             padding: 20px;
-            width: 80%;
             max-width: 400px;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.9));
-            border: 3px solid #333;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
             font-size: 18px;
             font-weight: bold;
             color: #333;
-            display: inline-block;
-            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Motivo geometrico interno */
+        .quote-box:before, .quote-box:after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -100%;
+            left: -100%;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #8fd3f4, #84fab0, #ff9a9e);
+            background-size: 300% 300%;
+            z-index: -1;
+            animation: gradientMove 6s infinite linear;
+            transform: rotate(45deg);
+        }
+
+        .quote-box:after {
+            animation-delay: 3s;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            body {
+                background-size: cover;
+            }
+
+            .casper {
+                width: 120px; /* Adatta Casper per schermi più piccoli */
+            }
+
+            .quote-box {
+                padding: 15px;
+                font-size: 16px;
+            }
         }
 
         /* Animazioni */
@@ -62,6 +96,15 @@
             }
             50% {
                 transform: translateY(10px);
+            }
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
             }
         }
     </style>
