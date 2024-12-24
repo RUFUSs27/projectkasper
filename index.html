@@ -10,8 +10,10 @@
             margin: 0;
             padding: 0;
             height: 100vh;
-            background: url('Images/sfondo-fantasy.jpg') no-repeat center center fixed;
-            background-size: cover;
+            width: 100vw;
+            background: url('Images/sfondo-fantasy.jpg') no-repeat center center;
+            background-size: contain; /* Contiene l'intero sfondo mantenendo le proporzioni */
+            background-attachment: fixed; /* Mantiene lo sfondo fisso */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -76,7 +78,7 @@
         /* Responsive design */
         @media (max-width: 768px) {
             body {
-                background-size: cover;
+                background-size: contain; /* Mantiene l'intero sfondo visibile */
             }
 
             .casper {
@@ -138,5 +140,6 @@
     </script>
 </body>
 </html>
+
 
      
