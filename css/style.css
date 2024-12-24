@@ -1,15 +1,20 @@
 /* Stile globale */
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  background: url('../images/sfondo-fantasy.jpg') no-repeat center center fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
+<style>
+  body {
+    margin: 0; /* Elimina i margini predefiniti */
+    padding: 0; /* Elimina i padding predefiniti */
+    height: 100vh; /* Imposta l'altezza del body al 100% della finestra */
+    background: url('../images/sfondo-fantasy.jpg') no-repeat center center fixed; /* Sfondo */
+    background-size: cover; /* Adatta l'immagine per coprire l'intero schermo */
+  }
+</style>
+
+@media (max-width: 768px) {
+  body {
+    background-size: contain; /* Cambia per contenere tutto su schermi più piccoli */
+  }
 }
+
 
 /* Contenitore principale */
 .container {
